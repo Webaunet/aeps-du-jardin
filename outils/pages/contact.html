@@ -1,0 +1,74 @@
+  <section class="sec" aria-labelledby="h1">
+    <div class="wrap">
+      <p class="eyebrow">Devis et renseignements</p>
+      <h1 id="h1">Nous contacter</h1>
+      <p class="lead" style="margin:16px 0 36px">Décrivez votre projet. Le formulaire prépare un message prêt à nous envoyer par SMS ou par e-mail.</p>
+      <div class="form-grid">
+        <div>
+          <form class="form" id="devis" novalidate>
+            <div class="row2">
+              <div class="field"><label for="nom">Nom</label><input id="nom" name="nom" type="text" autocomplete="name" required aria-describedby="nom-err"><p class="err" id="nom-err" role="alert"></p></div>
+              <div class="field"><label for="tel">Téléphone</label><input id="tel" name="tel" type="tel" autocomplete="tel" inputmode="tel" placeholder="06 12 34 56 78" required aria-describedby="tel-err"><p class="err" id="tel-err" role="alert"></p></div>
+            </div>
+            <div class="row2">
+              <div class="field"><label for="mail">E-mail <em>(facultatif)</em></label><input id="mail" name="mail" type="email" autocomplete="email" aria-describedby="mail-err"><p class="err" id="mail-err" role="alert"></p></div>
+              <div class="field"><label for="commune">Commune <em>(facultatif)</em></label><input id="commune" name="commune" type="text" autocomplete="address-level2"></div>
+            </div>
+            <div class="field"><label for="type">Type de projet</label>
+              <select id="type" name="type" required aria-describedby="type-err">
+                <option value="">Choisir…</option>
+                <option>Conception d'un jardin ou d'un aménagement</option>
+                <option>Création ou aménagement extérieur</option>
+                <option>Entretien du jardin</option>
+                <option>Élagage, abattage ou rognage de souche</option>
+                <option>Autre demande</option>
+              </select><p class="err" id="type-err" role="alert"></p></div>
+            <div class="field"><label for="msg">Votre projet</label><textarea id="msg" name="msg" required aria-describedby="msg-err" placeholder="Surface approximative, ce que vous souhaitez, délais éventuels…"></textarea><p class="err" id="msg-err" role="alert"></p></div>
+            <button class="btn" type="submit">Préparer mon message</button>
+          </form>
+          <div class="recap" id="recap" hidden>
+            <h2 id="recap-title" tabindex="-1" style="font-size:1.6rem">Votre message est prêt</h2>
+            <p>Relisez-le, puis choisissez comment l'envoyer. Rien n'est transmis tant que vous n'avez pas validé l'envoi dans votre application.</p>
+            <textarea id="recap-text" readonly aria-label="Récapitulatif de votre demande"></textarea>
+            <div class="actions" style="margin:0">
+              <a class="btn" id="sms" href="sms:+33620273080">Envoyer par SMS</a>
+              <button class="btn ghost" type="button" id="copier">Copier</button>
+              <a class="btn ghost" href="tel:+33620273080">Appeler</a>
+              <a class="btn ghost" id="mailto" href="mailto:geoffroy.allibert@gmail.com">Envoyer par e-mail</a>
+              <button class="btn ghost" type="button" id="modifier">Modifier</button>
+            </div>
+          </div>
+        </div>
+        <aside class="side-card" aria-label="Coordonnées">
+          <h2 style="font-size:1.6rem">Coordonnées</h2>
+          <ul class="facts-list">
+            <li><i>☎</i><span><strong>Téléphone</strong><br><a href="tel:+33620273080">06 20 27 30 80</a></span></li>
+            <li><i>@</i><span><strong>E-mail</strong><br><a href="mailto:geoffroy.allibert@gmail.com">geoffroy.allibert@gmail.com</a></span></li>
+            <li><i>⌂</i><span><strong>Adresse</strong><br>8 bis rue Pierre Lescot, 78000 Versailles</span></li>
+            <li><i>◷</i><span><strong>Horaires</strong><br>Du lundi au vendredi, de 7 h à 19 h</span></li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec tinted" aria-labelledby="h-zone">
+    <div class="wrap two-col" style="grid-template-columns:1fr 1fr">
+      <figure style="margin:0;border-radius:28px;overflow:hidden;aspect-ratio:4/3"><img src="images/taille-haie-allee.webp" style="width:100%;height:100%;object-fit:cover" alt="Jardinier qui taille une haie au taille-haie devant une maison de brique"></figure>
+      <div>
+        <p class="eyebrow">Où nous intervenons</p>
+        <h2 id="h-zone">Versailles et ses environs</h2>
+        <p class="lead" style="margin-top:18px">Nous travaillons pour les particuliers, les entreprises et les collectivités, au plus près de Versailles.</p>
+        <p class="lead" style="margin-top:12px">Vous nous trouvez au 8 bis rue Pierre Lescot, 78000 Versailles, et sur <a href="https://www.instagram.com/allibertpaysage_paysagiste/" target="_blank" rel="noopener">Instagram</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-c" aria-labelledby="h-cta">
+    <div class="wrap">
+      <p class="eyebrow" style="color:#10230f;opacity:.8">Réponse rapide</p>
+      <h2 id="h-cta">Préférez-vous nous appeler ?</h2>
+      <a class="big" href="tel:+33620273080">06 20 27 30 80</a>
+      <p>Du lundi au vendredi, de 7 h à 19 h.</p>
+    </div>
+  </section>
