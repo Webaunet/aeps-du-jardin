@@ -5,22 +5,23 @@ import os, re, sys
 from PIL import Image
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))
-SITE = 'https://webaunet.github.io/allibertpaysage/'
-TEL, TEL_HREF, MAIL = '06 20 27 30 80', 'tel:+33620273080', 'geoffroy.allibert@gmail.com'
+SITE = 'https://webaunet.github.io/aeps-du-jardin/'
+TEL, TEL_HREF, MAIL = '06 12 77 91 71', 'tel:+33612779171', 'a.e.p.s.dujardin@gmail.com'
+NOM, COMMUNE, LOGO = 'AEPS du Jardin', 'Évecquemont', 'images/logo-aeps-du-jardin.png'
 
 PAGES = [
- ('index.html', 'Accueil', 'index', "Allibert Paysage, paysagiste à Versailles : conception, création et entretien de jardins",
-  "Allibert Paysage à Versailles : conception, création et entretien d'espaces verts par une équipe unique, sans sous-traitance. Devis au 06 20 27 30 80."),
- ('nos-prestations.html', 'Nos prestations', 'prestations', "Nos prestations de paysagiste à Versailles | Allibert Paysage",
-  "Conception, création d'aménagements extérieurs, entretien, élagage et abattage : toutes les prestations d'Allibert Paysage à Versailles et alentours."),
- ('nos-realisations.html', 'Nos réalisations', 'realisations', "Nos réalisations de jardins à Versailles | Allibert Paysage",
-  "Conceptions, créations et entretiens de jardins par Allibert Paysage, paysagiste à Versailles : aperçu en images de nos trois métiers."),
- ('a-propos.html', 'À propos', 'apropos', "À propos d'Allibert Paysage, paysagiste à Versailles",
-  "Une seule équipe, des fournisseurs français et une méthode en quatre étapes : découvrez Allibert Paysage, paysagiste à Versailles."),
- ('nous-contacter.html', 'Nous contacter', 'contact', "Contacter Allibert Paysage à Versailles | Devis paysagiste",
-  "Demandez un devis à Allibert Paysage, paysagiste à Versailles : formulaire, téléphone 06 20 27 30 80 et e-mail. Du lundi au vendredi, 7 h à 19 h."),
- ('mentions-legales.html', None, 'mentions', "Mentions légales | Allibert Paysage, Versailles",
-  "Mentions légales du site d'Allibert Paysage, paysagiste à Versailles (SIREN 833 518 467)."),
+ ('index.html', 'Accueil', 'index', "AEPS du Jardin, arboriste-grimpeur et paysagiste à Évecquemont (78)",
+  "AEPS du Jardin à Évecquemont (Yvelines) : élagage, abattage, soins des arbres et aménagement paysager. Devis gratuit au 06 12 77 91 71."),
+ ('nos-prestations.html', 'Nos prestations', 'prestations', "Nos prestations : élagage, abattage, paysage | AEPS du Jardin",
+  "Élagage, abattage, soins des arbres, aménagement paysager, destruction de guêpes, frelons et chenilles processionnaires : les prestations d'AEPS du Jardin à Évecquemont."),
+ ('nos-realisations.html', 'Nos réalisations', 'realisations', "Nos réalisations d'arbres et de jardins | AEPS du Jardin à Évecquemont",
+  "Aperçu en images des métiers d'AEPS du Jardin, arboriste-grimpeur et paysagiste à Évecquemont : arbres, aménagements et entretien d'espaces verts."),
+ ('a-propos.html', 'À propos', 'apropos', "À propos d'AEPS du Jardin, arboriste-grimpeur à Évecquemont",
+  "AEPS du Jardin, société basée à Évecquemont (78) : arboriste-grimpeur et paysagiste. Découvrez nos activités et notre façon de travailler."),
+ ('nous-contacter.html', 'Nous contacter', 'contact', "Contacter AEPS du Jardin à Évecquemont | Devis gratuit",
+  "Demandez un devis gratuit à AEPS du Jardin, arboriste-grimpeur et paysagiste à Évecquemont : formulaire, téléphone 06 12 77 91 71 et e-mail."),
+ ('mentions-legales.html', None, 'mentions', "Mentions légales | AEPS du Jardin, Évecquemont",
+  "Mentions légales du site d'AEPS du Jardin, arboriste-grimpeur et paysagiste à Évecquemont (SIREN 999 196 587)."),
 ]
 
 def head(title, desc, canon):
@@ -31,7 +32,7 @@ def head(title, desc, canon):
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{title}</title>
 <meta name="description" content="{desc}">
-<link rel="icon" type="image/png" href="images/logo-allibert-paysage.png">
+<link rel="icon" type="image/png" href="images/logo-aeps-du-jardin.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Source+Sans+3:wght@400;600;700&display=swap">
@@ -49,8 +50,8 @@ def header(key):
         items += f'        <li><a href="{f}"{cur}>{label}</a></li>\n'
     return f'''<header class="site-header">
   <div class="wrap bar">
-    <a class="brand" href="{SITE}" aria-label="Allibert Paysage, accueil du site">
-      <img src="images/logo-allibert-paysage.png" alt="Logo Allibert Paysage : cercle vert avec feuillage et champs"><span>Allibert Paysage<small>Versailles</small></span>
+    <a class="brand" href="{SITE}" aria-label="AEPS du Jardin, accueil du site">
+      <img src="images/logo-aeps-du-jardin.png" alt="Logo AEPS du Jardin : un chêne vert dans un cercle gris"><span>AEPS du Jardin<small>Évecquemont</small></span>
     </a>
     <nav id="menu" aria-label="Navigation principale">
       <ul>
@@ -68,7 +69,7 @@ def header(key):
 FOOT = f'''</main>
 <footer>
   <div class="wrap foot">
-    <a class="brand" href="{SITE}" aria-label="Allibert Paysage, accueil du site"><img src="images/logo-allibert-paysage.png" alt="Logo Allibert Paysage"><span>Allibert Paysage<small>Versailles</small></span></a>
+    <a class="brand" href="{SITE}" aria-label="AEPS du Jardin, accueil du site"><img src="images/logo-aeps-du-jardin.png" alt="Logo AEPS du Jardin"><span>AEPS du Jardin<small>Évecquemont</small></span></a>
     <ul aria-label="Liens du pied de page">
       <li><a href="{TEL_HREF}">{TEL}</a></li>
       <li><a href="mailto:{MAIL}">{MAIL}</a></li>
@@ -76,7 +77,7 @@ FOOT = f'''</main>
       <li><a href="nous-contacter.html">Contact</a></li>
       <li><a href="mentions-legales.html">Mentions légales</a></li>
     </ul>
-    <small>© Allibert Paysage · SIREN 833 518 467 · Versailles · Maquette de présentation</small>
+    <small>© AEPS du Jardin · SIREN 999 196 587 · Évecquemont · Maquette de présentation</small>
   </div>
 </footer>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
@@ -94,7 +95,7 @@ def fix_imgs(html):
             if 'width=' not in tag: tag = tag.replace('<img ', f'<img width="{w}" height="{h}" ', 1)
         if 'data-eager' in tag:
             tag = tag.replace(' data-eager', '').replace('<img ', '<img fetchpriority="high" ', 1)
-        elif 'loading=' not in tag and 'logo-allibert' not in tag:
+        elif 'loading=' not in tag and 'logo-aeps' not in tag:
             tag = tag.replace('<img ', '<img loading="lazy" ', 1)
         return tag
     return re.sub(r'<img [^>]*>', rep, html)
@@ -104,7 +105,7 @@ def main():
     for f, label, key, title, desc in PAGES:
         body = open(os.path.join(ROOT, 'outils', 'pages', key + '.html'), encoding='utf-8').read()
         full = head(title, desc, f) + header(key) + body + FOOT
-        full = fix_imgs(full.replace('src="images/logo-allibert-paysage.png"', 'width="128" height="128" src="images/logo-allibert-paysage.png"'))
+        full = fix_imgs(full.replace('src="images/logo-aeps-du-jardin.png"', 'width="192" height="192" src="images/logo-aeps-du-jardin.png"'))
         open(os.path.join(ROOT, f), 'w', encoding='utf-8').write(full)
         names[f] = full
     bad = []

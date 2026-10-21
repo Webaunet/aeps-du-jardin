@@ -1,6 +1,6 @@
-/* Allibert Paysage - feuille de style partagée (toutes les pages). Concept : maison de pierre et jardin, sections alternées clair / teinté / vert profond. */
+/* AEPS du Jardin - feuille de style partagée (toutes les pages). Palette reprise du logo (vert feuillage, gris pierre), sections alternées clair / teinté / vert profond. */
 :root{
-  --forest:#123f27; --leaf:#3f7d2c; --lime:#a6ce39; --earth:#8a4f2c;
+  --forest:#123f27; --leaf:#3f7d2c; --lime:#8dc63f; --earth:#8a4f2c;
   --bg:#f3f7ef; --bg-alt:#e3ecd7; --card:#ffffff; --ink:#17251b; --muted:#4a5c4e;
   --band:#123f27; --band-ink:#eef5e6; --line:#c9d6bd; --btn:#1f5a32; --btn-ink:#ffffff; --accent-ink:#2f6a22;
   --f-display:'Bricolage Grotesque','Trebuchet MS',sans-serif; --f-body:'Source Sans 3','Segoe UI',Arial,sans-serif;

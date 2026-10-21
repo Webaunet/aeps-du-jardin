@@ -21,7 +21,7 @@
   /* Formulaire de contact */
   var form=document.getElementById('devis');
   if(!form)return;
-  var PHONE='+33620273080',MAIL='geoffroy.allibert@gmail.com';
+  var PHONE='+33612779171',MAIL='a.e.p.s.dujardin@gmail.com';
   var recap=document.getElementById('recap'),txt=document.getElementById('recap-text');
   function f(id){return document.getElementById(id)}
   function setErr(id,msg){var i=f(id),e=f(id+'-err');if(msg){i.setAttribute('aria-invalid','true');e.textContent=msg}else{i.removeAttribute('aria-invalid');e.textContent=''}return !msg}
